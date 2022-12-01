@@ -40,5 +40,8 @@ describe ElfCalorieCounter do
     it "returns the correct answer" do
       puts ElfCalorieCounter.most_calories(fixture("real_input"))
     end
+    it "returns the correct answer to problem 2" do
+      puts ElfCalorieCounter.top_three_calories(fixture("real_input"))
+    end
   end
 end
