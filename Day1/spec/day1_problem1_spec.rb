@@ -9,4 +9,10 @@ describe ElfCalorieCounter do
   it "loads the sample.txt" do
     expect(fixture("elf_calories").lines.count).to eq(14)
   end
+
+  context "#count_calories" do
+    it "returns an array" do
+      expect(ElfCalorieCounter.count_calories(fixture("elf_calories"))).to be_a Array
+    end
+  end
 end
