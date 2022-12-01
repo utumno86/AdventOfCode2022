@@ -11,8 +11,16 @@ describe ElfCalorieCounter do
   end
 
   context "#count_calories" do
+    let(:counter) { ElfCalorieCounter }
+    let(:calorie_input) { fixture("elf_calories") }
     it "returns an array" do
-      expect(ElfCalorieCounter.count_calories(fixture("elf_calories"))).to be_a Array
+      expect(counter.count_calories(calorie_input)).to be_a Array
+    end
+    it "returns the correct number array elements" do
+      expect(counter.count_calories(calorie_input).length).to eq(5)
+    end
+    it "returns the correct sum for the first elf" do
+      expect(counter.count_calories(calorie_input)[0]).to eq(6000)
     end
   end
 end
