@@ -30,6 +30,12 @@ describe ElfCalorieCounter do
     end
   end
 
+  context "#top_three_calories" do
+    it "returns the sum of the top 3 elf calories" do
+      expect(counter.top_three_calories(calorie_input)).to eq(45000)
+    end
+  end
+
   context "solve the actual problem" do
     it "returns the correct answer" do
       puts ElfCalorieCounter.most_calories(fixture("real_input"))
