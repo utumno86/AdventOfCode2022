@@ -4,4 +4,8 @@ module ElfCalorieCounter
       elf.split("\n").map(&:to_i).sum
     end
   end
+
+  def self.most_calories(calories_list)
+    count_calories(calories_list).max
+  end
 end
