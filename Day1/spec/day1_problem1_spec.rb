@@ -29,4 +29,10 @@ describe ElfCalorieCounter do
       expect(counter.most_calories(calorie_input)).to eq(24000)
     end
   end
+
+  context "solve the actual problem" do
+    it "returns the correct answer" do
+      puts ElfCalorieCounter.most_calories(fixture("real_input"))
+    end
+  end
 end
