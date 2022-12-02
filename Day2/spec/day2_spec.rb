@@ -51,12 +51,7 @@ describe RPSScorer do
     end
   end
 
-  # context "solve the actual problem" do
-  #   it "returns the correct answer" do
-  #     puts ElfCalorieCounter.most_calories(fixture("real_input"))
-  #   end
-  #   it "returns the correct answer to problem 2" do
-  #     puts ElfCalorieCounter.top_three_calories(fixture("real_input"))
-  #   end
-  # end
+  context "solve the actual problem" do
+    puts RPSScorer.total_score(fixture("real_input"))
+  end
 end
