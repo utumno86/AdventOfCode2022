@@ -3,6 +3,18 @@ module RPSScorer
             "Y" => 2,
             "Z" => 3}
 
+  WIN_CONDITIONS = {
+    "X" => "C",
+    "Y" => "A",
+    "Z" => "B"
+  }
+
+  RPS_EQUIVALENTS = {
+    "X" => "A",
+    "Y" => "B",
+    "Z" => "C"
+  }
+
   def self.parse_plays(guide)
     guide.split("\n").map do |play|
       play.split(" ")
@@ -13,7 +25,15 @@ module RPSScorer
     SCORES[object]
   end
 
-  # def self.top_three_calories(calories_list)
-  #   count_calories(calories_list).max(3).sum
-  # end
+  def self.play_score(play)
+    opponent, player = play
+
+    if WIN_CONDITIONS[player] == opponent
+      6
+    elsif opponent == RPS_EQUIVALENTS[player]
+      3
+    else
+      0
+    end
+  end
 end

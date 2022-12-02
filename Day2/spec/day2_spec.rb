@@ -30,11 +30,20 @@ describe RPSScorer do
     end
   end
 
-  # context "#top_three_calories" do
-  #   it "returns the sum of the top 3 elf calories" do
-  #     expect(counter.top_three_calories(calorie_input)).to eq(45000)
-  #   end
-  # end
+  context "#play score" do
+    it "paper beats rock" do
+      expect(RPSScorer.play_score(["B", "X"])).to eq(0)
+    end
+    it "rock beats scissors" do
+      expect(RPSScorer.play_score(["C", "X"])).to eq(6)
+    end
+    it "handles ties" do
+      expect(RPSScorer.play_score(["C", "Z"])).to eq(3)
+    end
+    it "handles sample scenario" do
+      expect(RPSScorer.play_score(RPSScorer.parse_plays(guide)[1])).to eq(0)
+    end
+  end
 
   # context "solve the actual problem" do
   #   it "returns the correct answer" do
