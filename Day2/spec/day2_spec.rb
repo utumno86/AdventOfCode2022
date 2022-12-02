@@ -2,7 +2,6 @@ require_relative "../lib/rps_scorer"
 require_relative "./spec_helper"
 
 describe RPSScorer do
-  let(:counter) { RPSScorer }
   let(:guide) { fixture("sample_guide") }
   it "loads" do
     expect(described_class).to be_a Module
@@ -12,17 +11,18 @@ describe RPSScorer do
     expect(fixture("sample_guide").lines.count).to eq(3)
   end
 
-  # context "#count_calories" do
-  #   it "returns an array" do
-  #     expect(counter.count_calories(calorie_input)).to be_a Array
-  #   end
-  #   it "returns the correct number array elements" do
-  #     expect(counter.count_calories(calorie_input).length).to eq(5)
-  #   end
-  #   it "returns the correct sum for the first elf" do
-  #     expect(counter.count_calories(calorie_input)[0]).to eq(6000)
-  #   end
-  # end
+  context "parse_plays" do
+    it "returns an array" do
+      expect(RPSScorer.parse_plays(guide)).to be_a Array
+    end
+    it "returns an array of arrays" do
+      expect(RPSScorer.parse_plays(guide)[0]).to be_a Array
+    end
+    it "returns the play and the counter in an array" do
+      expect(RPSScorer.parse_plays(guide)[0][0]).to eq("A")
+      expect(RPSScorer.parse_plays(guide)[0][1]).to eq("Y")
+    end
+  end
 
   # context "#most_calories" do
   #   it "returns the biggest calories count of the elves" do
