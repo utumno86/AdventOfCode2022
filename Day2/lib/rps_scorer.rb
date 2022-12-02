@@ -36,4 +36,10 @@ module RPSScorer
       0
     end
   end
+
+  def self.total_score(guide)
+    parse_plays(guide).map do |play|
+      object_score(play[1]) + play_score(play)
+    end.sum
+  end
 end

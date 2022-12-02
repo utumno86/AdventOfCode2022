@@ -45,6 +45,12 @@ describe RPSScorer do
     end
   end
 
+  context "#total_score" do
+    it "calculates the correct score from sample" do
+      expect(RPSScorer.total_score(guide)).to eq(15)
+    end
+  end
+
   # context "solve the actual problem" do
   #   it "returns the correct answer" do
   #     puts ElfCalorieCounter.most_calories(fixture("real_input"))
