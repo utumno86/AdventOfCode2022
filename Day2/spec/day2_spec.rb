@@ -24,11 +24,11 @@ describe RPSScorer do
     end
   end
 
-  # context "#most_calories" do
-  #   it "returns the biggest calories count of the elves" do
-  #     expect(counter.most_calories(calorie_input)).to eq(24000)
-  #   end
-  # end
+  context "#object_score" do
+    it "returns the correct score for scissors" do
+      expect(RPSScorer.object_score("Z")).to eq(3)
+    end
+  end
 
   # context "#top_three_calories" do
   #   it "returns the sum of the top 3 elf calories" do
